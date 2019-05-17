@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="common_network_retry_tip">Please check whether the network is connected</string>
+    <string name="common_network_mobile_tip">Please note that you are using a mobile network now</string>
+    <string name="common_check_permission">Check Permission please</string>
+    <string name="common_dialog_normal_title">Prompt</string>
+    <string name="common_empty_view_title">No Results Found</string>
+    <string name="common_error_view_title">Whoops! Something went wrong</string>
+    <string name="common_error_view_btn">Retry</string>
+    <string name="common_loading">loading</string>
+    <string name="common_permission_request_error">permission request fail</string>
+    //网络解析
+    <string name="common_network_netWork">Network connection failed</string>
+    <string name="common_network_internal">Program internal error</string>
+    <string name="common_network_server">Server error</string>
+    <string name="common_network_unKnow">Unknown error</string>
+</resources>
