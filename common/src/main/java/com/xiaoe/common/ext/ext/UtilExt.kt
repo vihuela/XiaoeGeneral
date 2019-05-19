@@ -91,6 +91,7 @@ fun Application.killCurrentProcess() {
 
 fun ImageView.show(imageUrl: Any?) {
     try {
+        tag = null
         Glide.with(context)
             .load(imageUrl)
             .placeholder(ColorDrawable(Color.parseColor("#DCDDE1")))

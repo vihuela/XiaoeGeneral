@@ -20,16 +20,11 @@
                 type="com.xiaoe.xiaoegeneral.model.ImageItem"/>
     </data>
 
-    <FrameLayout
-            android:id="@+id/ivContain"
-            android:layout_width="match_parent" android:layout_height="200dp">
-
-        <ImageView
-                android:layout_width="match_parent"
-                android:id="@+id/iv"
-                tools:src="@mipmap/ic_launcher"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"/>
-    </FrameLayout>
+    <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/iv"
+            tools:src="@mipmap/ic_launcher"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
 </layout>

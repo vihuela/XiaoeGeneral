@@ -131,6 +131,7 @@ class RefreshManager : IList {
                 if (valid) {
                     srl?.finishLoadMore()
                 } else {
+                    srl?.finishLoadMore()
                     srl?.setEnableLoadMore(false)
                 }
                 return
@@ -145,6 +146,7 @@ class RefreshManager : IList {
                 currentPage++
                 srl?.setEnableLoadMore(currentPage < totalPage + pageStartOffset - 1)
             } else {
+                srl?.finishLoadMore()
                 srl?.setEnableLoadMore(false)
             }
         }
