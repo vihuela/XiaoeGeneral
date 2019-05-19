@@ -88,5 +88,6 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-8'//刷新库：https://github.com/scwang90/SmartRefreshLayout
     api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-8'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation(name: 'Transferee-release', ext: 'aar',{exclude group: 'com.nostra13.universalimageloader'})//图片缩放：https://github.com/Hitomis/transferee
 
 }

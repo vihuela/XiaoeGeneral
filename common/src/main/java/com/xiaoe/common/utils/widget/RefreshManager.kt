@@ -64,16 +64,26 @@ class RefreshManager : IList {
     /**
      * 刷新监听，【必须置于最后】
      */
-    fun setOnRefreshListener(listener: (startOffset:Int) -> Unit): RefreshManager {
+    fun setOnRefreshListener(listener: (startOffset: Int) -> Unit): RefreshManager {
         srl?.setOnRefreshListener { listener.invoke(pageStartOffset) }
         return this
     }
 
     /**
      * 加载更多监听，必须置于最后】
+     * ①有传totalPage
+     * ②没有totalPage，用loadSize判断
      */
-    fun setOnLoadMoreListener(listener: (nextPage: Int) -> Unit): RefreshManager {
+    fun setOnLoadMoreListener1(listener: (nextPage: Int) -> Unit): RefreshManager {
         srl?.setOnLoadMoreListener { listener.invoke(getNextPage()) }
+        return this
+    }
+
+    /**
+     * 加载更多监听，必须置于最后】，返回最后一个item
+     */
+    fun <T> setOnLoadMoreListener2(listener: (lastItem: T) -> Unit): RefreshManager {
+        srl?.setOnLoadMoreListener { listener.invoke(mta!!.items.last() as T) }
         return this
     }
 
