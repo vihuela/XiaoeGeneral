@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply from: rootProject.file('cc_config.gradle')
 
 apply plugin: 'kotlin-android'
 
@@ -10,7 +10,8 @@ android {
 
 
     defaultConfig {
-        applicationId "com.xiaoe.app2"
+//        if (project.ext.runAsApp)
+//            applicationId "com.xiaoe.app2"
         minSdkVersion "$minSdk_version".toInteger()
         targetSdkVersion "$maxSdk_version".toInteger()
         versionCode 1
@@ -41,7 +42,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    implementation project(':common')
     kapt "androidx.databinding:databinding-compiler:$build_gradle_version"
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation project(':common')
 }

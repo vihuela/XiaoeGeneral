@@ -1,6 +1,7 @@
 package com.xiaoe.app2
 
 import android.os.Bundle
+import com.billy.cc.core.component.CC
 import com.xiaoe.app2.binder.MainActivityImageBinder
 import com.xiaoe.app2.databinding.App2ActivityMainBinding
 import com.xiaoe.app2.presenter.MainActivityPresenter

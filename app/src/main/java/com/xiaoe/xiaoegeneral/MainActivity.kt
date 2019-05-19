@@ -2,6 +2,7 @@ package com.xiaoe.xiaoegeneral
 
 import android.os.Bundle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.billy.cc.core.component.CC
 import com.blankj.utilcode.util.SizeUtils
 import com.xiaoe.common.base.BaseActivity
 import com.xiaoe.common.ext.ext.applyStatusBarBlack
@@ -56,6 +57,14 @@ class MainActivity : BaseActivity<MainActivityPresenter, ActivityMainBinding>(),
 
         refreshLayout.autoRefresh()
 
+        //组件化拉起
+        tvTitle.setOnClickListener {
+            CC.obtainBuilder("App2Component")
+                .setActionName("showNewsPage")
+                .build().callAsync { cc, result ->
+                    println()
+                }
+        }
     }
 
     override fun onStateViewRetryListener() {

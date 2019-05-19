@@ -1,0 +1,36 @@
+project.apply plugin: 'cc-register'
+project.dependencies.add('api', "com.billy.android:cc:${cc_version}")
+
+dependencies {
+    implementation project(':app_base')
+}
+//auto register extension:
+// 源码地址：https://github.com/luckybilly/AutoRegister
+// 功能介绍：
+//  在编译期扫描将打到apk包中的所有类
+//  将 scanInterface的实现类 或 scanSuperClasses的子类
+//  并在 codeInsertToClassName 类的 codeInsertToMethodName 方法中生成如下代码：
+//  codeInsertToClassName.registerMethodName(scanInterface)
+// 要点：
+//  1. codeInsertToMethodName 若未指定，则默认为static块
+//  2. codeInsertToMethodName 与 registerMethodName 需要同为static或非static
+// 自动生成的代码示例：
+/*
+  在com.billy.app_lib_interface.CategoryManager.class文件中
+  static
+  {
+    register(new CategoryA()); //scanInterface的实现类
+    register(new CategoryB()); //scanSuperClass的子类
+  }
+ */
+//ccregister.registerInfo.add([
+//    //在自动注册组件的基础上增加：自动注册组件B的processor
+//    'scanInterface'             : 'com.billy.cc.demo.component.b.processor.IActionProcessor'
+//    , 'codeInsertToClassName'   : 'com.billy.cc.demo.component.b.ComponentB'
+//    , 'codeInsertToMethodName'  : 'initProcessors'
+//    , 'registerMethodName'      : 'add'
+//])
+//也可以按照上述格式继续添加你自己的自动注册需求，俗称：搭顺风车
+
+//开启app内部多进程组件调用
+ccregister.multiProcessEnabled = true
