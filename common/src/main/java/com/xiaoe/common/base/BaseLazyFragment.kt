@@ -34,7 +34,7 @@ abstract class BaseLazyFragment : RxFragment() {
             onUserInvisible()
         }
     }
-
+    //仅使用FragmentPagerAdapter时调用。才能实现懒加载。
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
@@ -55,6 +55,8 @@ abstract class BaseLazyFragment : RxFragment() {
     }
 
     //首次可见
+    // 【注意：此方法需要setUserVisibleHint被回调才可以使用。所以加载fragment应该统一使用viewpager+FragmentPagerAdapter加载】
+    //快速设置ViewPager，可使用com.xiaoe.common.ext.ext.UtilExtKt.setupAdapter扩展
     protected abstract fun onFirstUserVisible()
 
     //每次可见

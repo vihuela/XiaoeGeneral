@@ -9,21 +9,10 @@
             android:layout_height="match_parent"
             tools:context=".MainActivity">
 
-
-        <com.scwang.smartrefresh.layout.SmartRefreshLayout
-                android:id="@+id/refreshLayout"
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:contentDescription="setup_stateView"
-                android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/mRecycleView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="true"
-                    android:overScrollMode="never"
-                    android:background="#fff"/>
-        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
+                android:layout_height="match_parent"/>
         <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:background="@android:color/transparent"
@@ -31,13 +20,12 @@
                 android:layout_height="42dp">
 
             <TextView
+                    android:id="@+id/titleTv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/tvTitle"
                     android:text="Some Fancy content"
                     android:gravity="center"
             />
         </androidx.appcompat.widget.Toolbar>
-
     </FrameLayout>
 </layout>

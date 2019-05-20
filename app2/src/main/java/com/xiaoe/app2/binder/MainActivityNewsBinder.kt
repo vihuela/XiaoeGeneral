@@ -9,10 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xiaoe.app2.R
 import com.xiaoe.app2.request.model.NewsRequest
 import com.xiaoe.common.ext.ext.show
-import com.xiaoe.common.ext.ext.zoom
 import me.drakeet.multitype.ItemViewBinder
 
-class MainActivityImageBinder() : ItemViewBinder<NewsRequest.ListRes.StoriesBean, MainActivityImageBinder.ImageHolder>() {
+class MainActivityNewsBinder() : ItemViewBinder<NewsRequest.ListRes.StoriesBean, MainActivityNewsBinder.ImageHolder>() {
     override fun onBindViewHolder(holder: ImageHolder, item: NewsRequest.ListRes.StoriesBean) {
 
         holder.image.show(item.getImageUrl())

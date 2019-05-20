@@ -27,7 +27,12 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.blankj.utilcode.util.ToastUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -155,6 +160,20 @@ fun RecyclerView.addOnVerticalScrollListener(onScrolledUp: (recyclerView: Recycl
             }
         }
     })
+
+}
+
+fun ViewPager.setupAdapter(frgManager: FragmentManager, vararg  frg:Fragment?){
+    val targetF = frg.filter { it!=null }
+    if(targetF.isNotEmpty()){
+        offscreenPageLimit = frg.size
+        adapter = object : FragmentPagerAdapter(frgManager){
+            override fun getItem(position: Int): Fragment {
+                return targetF[position]!!
+            }
+            override fun getCount(): Int  = targetF.size
+        }
+    }
 
 }
 

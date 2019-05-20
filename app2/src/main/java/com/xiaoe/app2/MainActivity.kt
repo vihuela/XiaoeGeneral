@@ -2,61 +2,33 @@ package com.xiaoe.app2
 
 import android.os.Bundle
 import com.billy.cc.core.component.CC
-import com.xiaoe.app2.binder.MainActivityImageBinder
+import com.billy.cc.core.component.CCResult
+import com.billy.cc.core.component.CCUtil
 import com.xiaoe.app2.databinding.App2ActivityMainBinding
-import com.xiaoe.app2.presenter.MainActivityPresenter
-import com.xiaoe.app2.request.Api
+import com.xiaoe.app2.ui.NewsFragment
+import com.xiaoe.app_base.model.UserInfo
 import com.xiaoe.common.base.BaseActivity
-import com.xiaoe.common.base.ui.IList
+import com.xiaoe.common.base.defaults.EmptyPresenter
 import com.xiaoe.common.ext.ext.applyStatusBarBlack
-import com.xiaoe.common.utils.widget.RefreshManager
+import com.xiaoe.common.ext.ext.setupAdapter
 import kotlinx.android.synthetic.main.app2_activity_main.*
-import me.drakeet.multitype.MultiTypeAdapter
 
-class MainActivity : BaseActivity<MainActivityPresenter, App2ActivityMainBinding>(),
-    IList {
-    override fun setData(beanList: List<Any>, loadMore: Boolean) {
-        refreshMgr?.setData(beanList, loadMore)
-    }
+class MainActivity : BaseActivity<EmptyPresenter, App2ActivityMainBinding>() {
 
-    override fun setMessage(error: Any, content: String) {
-        refreshMgr?.setMessage(error, content)
-    }
-
-    var adapter: MultiTypeAdapter? = null
-    var refreshMgr: RefreshManager? = null
     override fun getLayoutId(): Int = R.layout.app2_activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         applyStatusBarBlack()
-        adapter = MultiTypeAdapter()
-        adapter!!.register(MainActivityImageBinder())
+        pager.setupAdapter(supportFragmentManager,NewsFragment())
 
-        mRecycleView.also {
-            it.adapter = adapter
+        //返回调用结果给其它组件
+        val result = mutableMapOf<String, Any>().also {
+            it["user"] = UserInfo("ricky","man")
+            it["param2"] = false
         }
 
-        refreshMgr = RefreshManager()
-            .setSmartRefreshLayout(refreshLayout)
-            .setAdapter(adapter)
-            .setIStateView(this)
-            .setLoadSize(Api.pageSize)
-            .setPageStartOffset(Api.startOffset)
-            .setOnRefreshListener {
-                mPresenter.getNewsList(this)
-            }
-            .setOnLoadMoreListener1 { nextPage ->
-                mPresenter.getNewsListForDate(this, nextPage)
-            }
-
-        refreshLayout.autoRefresh()
-
-    }
-
-    override fun onStateViewRetryListener() {
-        super.onStateViewRetryListener()
-        refreshLayout.autoRefresh()
+        CC.sendCCResult(CCUtil.getNavigateCallId(this), CCResult.success(result))
     }
 }
 
