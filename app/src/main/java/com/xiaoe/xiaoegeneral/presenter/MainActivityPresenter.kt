@@ -14,16 +14,17 @@ import io.rx_cache2.DynamicKey
 class MainActivityPresenter : BasePresenter<IList>() {
 
     fun getImageList(view: IList, page: Int = Api.startOffset, loadMore: Boolean) {
-
+        //正常retrofit
         val api = Api.IMPL.getImageList(Api.pageSize, page)
+        //拥有缓存配置retrofit
         val cacheApi = ApiCacheProvider.IMPL.getImageList(api, DynamicKey(page))
 
-        api//可以切换api和cacheApi
-            .defPolicy_Retry(this,"getImageList")
-            .compose(XiaoeTransformer())
+        cacheApi
+            .defPolicy_Retry(this,"getImageList")//第二个参数作用：比如连续发起10个请求，会取消前面9个
+            .compose(XiaoeTransformer())//数据源生产者的通用过滤
             .map {
                 //cacheApi
-                it.results.map { ImageItem(it.url) }
+                it.data.results.map { ImageItem(it.url) }
                 //api
                 /*it.results.map { ImageItem(it.url) }*/
             }

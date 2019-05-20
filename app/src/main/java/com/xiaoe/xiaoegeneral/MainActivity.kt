@@ -2,14 +2,11 @@ package com.xiaoe.xiaoegeneral
 
 import android.os.Bundle
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.billy.cc.core.component.CC
 import com.blankj.utilcode.util.SizeUtils
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener
 import com.xiaoe.common.base.BaseActivity
 import com.xiaoe.common.ext.ext.applyStatusBarBlack
 import com.xiaoe.common.base.ui.IList
-import com.xiaoe.common.ext.eventbus.Event
-import com.xiaoe.common.ext.eventbus.sendEvent
-import com.xiaoe.common.ext.ext.applyStatusBarWhite
 import com.xiaoe.common.utils.widget.RefreshManager
 import com.xiaoe.xiaoegeneral.binder.MainActivityImageBinder
 import com.xiaoe.xiaoegeneral.databinding.ActivityMainBinding
@@ -51,13 +48,23 @@ class MainActivity : BaseActivity<MainActivityPresenter, ActivityMainBinding>(),
             .setIStateView(this)
             .setLoadSize(Api.pageSize)
             .setPageStartOffset(Api.startOffset)
-            .setOnRefreshListener { startOffset ->  mPresenter.getImageList(this, startOffset, false) }
-            .setOnLoadMoreListener { nextPage ->
+            .setOnRefreshListener { startOffset ->
+                mPresenter.getImageList(this, startOffset, false)
+            }
+            .setOnLoadMoreListener1 { nextPage ->
                 mPresenter.getImageList(this, nextPage, true)
             }
 
         refreshLayout.autoRefresh()
 
+        //组件化拉起
+        tvTitle.setOnClickListener {
+            CC.obtainBuilder("App2Component")
+                .setActionName("showNewsPage")
+                .build().callAsync { cc, result ->
+                    println()
+                }
+        }
     }
 
     override fun onStateViewRetryListener() {

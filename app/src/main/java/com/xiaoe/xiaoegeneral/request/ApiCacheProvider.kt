@@ -1,5 +1,6 @@
 package com.xiaoe.xiaoegeneral.request
 
+import com.blankj.utilcode.util.NetworkUtils
 import com.xiaoe.common.retrofit.ApiUtils
 import com.xiaoe.xiaoegeneral.request.model.ImageRequest
 import io.reactivex.Observable
@@ -12,13 +13,13 @@ import java.util.concurrent.TimeUnit
 interface ApiCacheProvider {
     companion object {
         val IMPL: ApiCacheProvider = ApiUtils.getApiCache(ApiCacheProvider::class.java)
-        val NO_CACHE = ApiUtils.isRxCacheEvict
+        val NO_CACHE =  NetworkUtils.isConnected()//网络连接时不使用缓存
     }
 
     @LifeCache(duration = 7, timeUnit = TimeUnit.DAYS)
     fun getImageList(
         resObservable: Observable<ImageRequest>, url: DynamicKey, evictDynamicKey: EvictDynamicKey = EvictDynamicKey(
-            false
+            NO_CACHE
         )
     ): Observable<Reply<ImageRequest>>
 
