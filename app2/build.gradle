@@ -1,48 +1,22 @@
-apply from: rootProject.file('cc_config.gradle')
+apply from: rootProject.file('app_envir.gradle')
 
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
 android {
-    compileSdkVersion "$maxSdk_version".toInteger()
 
 
     defaultConfig {
-//        if (project.ext.runAsApp)
-//            applicationId "com.xiaoe.app2"
-        minSdkVersion "$minSdk_version".toInteger()
-        targetSdkVersion "$maxSdk_version".toInteger()
+        if (project.ext.runAsApp)
+            applicationId "com.xiaoe.app2"
+
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
-
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    dataBinding {
-        enabled true
-    }
 
     resourcePrefix "app2_"//手动创建
 
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    kapt "androidx.databinding:databinding-compiler:$build_gradle_version"
-    kapt 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation project(':common')
 }

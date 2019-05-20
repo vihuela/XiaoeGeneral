@@ -1,25 +1,17 @@
 ext.mainApp = true
-apply from: rootProject.file('cc_config.gradle')
 
-apply plugin: 'kotlin-android'
+apply from: rootProject.file('app_envir.gradle')
 
-apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion "$maxSdk_version".toInteger()
+
     defaultConfig {
         applicationId "com.xiaoe.xiaoegeneral"
-        minSdkVersion "$minSdk_version".toInteger()
-        targetSdkVersion "$maxSdk_version".toInteger()
+
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
-        renderscriptTargetApi 25
-        renderscriptSupportModeEnabled true
-        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -27,20 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dataBinding {
-        enabled true
-    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    kapt "androidx.databinding:databinding-compiler:$build_gradle_version"
-    kapt 'com.github.bumptech.glide:compiler:4.9.0'
-    implementation project(':common')
 
     addComponent 'app2'
 }

@@ -20,15 +20,17 @@ class MainActivity : BaseActivity<EmptyPresenter, App2ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         applyStatusBarBlack()
-        pager.setupAdapter(supportFragmentManager,NewsFragment())
+        pager.setupAdapter(supportFragmentManager, NewsFragment())
 
-        //返回调用结果给其它组件
-        val result = mutableMapOf<String, Any>().also {
-            it["user"] = UserInfo("ricky","man")
-            it["param2"] = false
+        val navigateCallId = CCUtil.getNavigateCallId(this)
+        if (navigateCallId != null){
+            //返回调用结果给其它组件
+            val result = mutableMapOf<String, Any>().also {
+                it["user"] = UserInfo("ricky", "man")
+                it["param2"] = false
+            }
+            CC.sendCCResult(navigateCallId, CCResult.success(result))
         }
-
-        CC.sendCCResult(CCUtil.getNavigateCallId(this), CCResult.success(result))
     }
 }
 
