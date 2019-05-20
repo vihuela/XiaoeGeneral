@@ -2,12 +2,7 @@
 
 ### 项目结构
 
-组件化
+![image](https://github.com/vihuela/XiaoeGeneral/blob/master/appDes.png ) 
 
-![apps](C:\Users\Xiaoe\Desktop\apps.png)
-
-模块内
-
-![app](C:\Users\Xiaoe\Desktop\app.png)
 
 
