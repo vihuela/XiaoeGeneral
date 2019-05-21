@@ -9,9 +9,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app2" />
-            <option value="$PROJECT_DIR$/app_base" />
-            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/appbox-ui" />
+            <option value="$PROJECT_DIR$/xe-base-ui" />
+            <option value="$PROJECT_DIR$/xe-core" />
+            <option value="$PROJECT_DIR$/xe-mediator" />
+            <option value="$PROJECT_DIR$/xe-net" />
+            <option value="$PROJECT_DIR$/xe-tools" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

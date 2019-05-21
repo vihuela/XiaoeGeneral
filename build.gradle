@@ -21,8 +21,9 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
         flatDir {
+            //如果类库引入libs不生效。这里配置
             dirs 'libs'
-            dirs project(':common').file('libs')
+            dirs project(':xe-core').file('libs')
         }
     }
 }

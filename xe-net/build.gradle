@@ -1,0 +1,16 @@
+apply from: rootProject.file('app_lib_envir.gradle')
+
+android {
+    resourcePrefix "xent_"
+}
+
+dependencies {
+    //retrofit & okHttp
+    api "com.squareup.retrofit2:retrofit:$retrofit2_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version"
+    api "com.squareup.retrofit2:converter-gson:$retrofit2_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
+    api "com.squareup.okhttp3:okhttp:$okHttp_version"
+    //https://github.com/vihuela/Retrofitplus
+    api 'com.ricky:retrofitExceptionDispatcher:0.6'
+}

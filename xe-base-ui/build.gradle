@@ -1,0 +1,12 @@
+apply from: rootProject.file('app_lib_envir.gradle')
+
+android {
+    resourcePrefix "xbu_"
+}
+
+dependencies {
+    //刷新库：https://github.com/scwang90/SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-andx-8'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-andx-8'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+}

@@ -25,5 +25,5 @@ android {
 dependencies {
 
 
-    addComponent 'app2'
+    addComponent 'appbox-ui'
 }

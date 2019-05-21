@@ -1,0 +1,16 @@
+apply from: rootProject.file('app_lib_envir.gradle')
+
+android {
+    resourcePrefix "xet_"
+}
+
+
+dependencies {
+    api 'org.greenrobot:eventbus:3.1.0'
+    api 'io.paperdb:paperdb:2.6'//替代sp数据存储，实现在xe-core的Pref.kt
+    api 'com.blankj:utilcodex:1.23.7'//通用工具类：https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md
+    api 'com.github.Kennyc1012:MultiStateView:1.3.2'//支持框架视图切换
+    api 'com.github.bumptech.glide:glide:4.9.0'//图片加载，kt扩展在xe-core的UtilExt.kt
+    api 'me.drakeet.multitype:multitype:4.0.0-alpha3'//适配器：https://github.com/drakeet/MultiType
+    api(name: 'Transferee-release', ext: 'aar',{exclude group: 'com.nostra13.universalimageloader'})//图片缩放：https://github.com/Hitomis/transferee
+}
