@@ -1,2 +1,7 @@
 <resources>
+    //网络解析
+    <string name="xent_network_netWork">网络连接失败</string>
+    <string name="xent_network_internal">程序内部错误</string>
+    <string name="xent_network_server">服务器错误</string>
+    <string name="xent_network_unKnow">未知错误</string>
 </resources>

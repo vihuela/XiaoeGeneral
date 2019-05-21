@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //网络解析
+    <string name="xent_network_netWork">Network connection failed</string>
+    <string name="xent_network_internal">Program internal error</string>
+    <string name="xent_network_server">Server error</string>
+    <string name="xent_network_unKnow">Unknown error</string>
+</resources>

@@ -1,3 +1,4 @@
+//此模块作为核心库，提供各种kt扩展
 apply from: rootProject.file('app_lib_envir.gradle')
 
 android {
@@ -36,11 +37,6 @@ dependencies {
     api "com.jakewharton.rxbinding3:rxbinding-appcompat:$rxBinding_version"
     api "com.jakewharton.rxbinding3:rxbinding-recyclerview:$rxBinding_version"
     api "com.jakewharton.rxbinding3:rxbinding-viewpager:$rxBinding_version"
-    api "com.github.VictorAlbertos.RxCache:runtime:$rxCache_version"//基于retrofit的缓存：https://github.com/VictorAlbertos/RxCache/
-    api "com.github.VictorAlbertos.Jolyglot:gson:$rxCache_gson_version"
-    api "com.github.pwittchen:reactivenetwork-rx2:$rxNetwork_version"//网络检测https://github.com/pwittchen/ReactiveNetwork/
-    api "com.github.tbruyelle:rxpermissions:$rxPermissions_version"//权限检查：https://github.com/tbruyelle/RxPermissions/
-    api "zlc.season:rxdownload3:$rxDownLoad_version"//下载:https://github.com/ssseasonnn/RxDownload/
 
     api project(':xe-tools')//工具
     api project(':xe-base-ui')//UI

@@ -1,3 +1,4 @@
+//此模块作为基础网络，提供网络连接、缓存能力
 apply from: rootProject.file('app_lib_envir.gradle')
 
 android {
@@ -5,6 +6,9 @@ android {
 }
 
 dependencies {
+    api "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    api "com.github.VictorAlbertos.RxCache:runtime:$rxCache_version"//基于retrofit的缓存：https://github.com/VictorAlbertos/RxCache/
+    api "com.github.VictorAlbertos.Jolyglot:gson:$rxCache_gson_version"
     //retrofit & okHttp
     api "com.squareup.retrofit2:retrofit:$retrofit2_version"
     api "com.squareup.retrofit2:adapter-rxjava2:$retrofit2_version"

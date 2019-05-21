@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="aud_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/aud_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/aud_colorPrimaryDark</item>
+        <item name="colorAccent">@color/aud_colorAccent</item>
+    </style>
+
+</resources>

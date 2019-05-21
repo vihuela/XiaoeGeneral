@@ -1,3 +1,4 @@
+//此模块作为基础工具库
 apply from: rootProject.file('app_lib_envir.gradle')
 
 android {
@@ -6,6 +7,11 @@ android {
 
 
 dependencies {
+    api "io.reactivex.rxjava2:rxjava:$rxJava_version"
+    api "com.github.pwittchen:reactivenetwork-rx2:$rxNetwork_version"//网络检测https://github.com/pwittchen/ReactiveNetwork/
+    api "com.github.tbruyelle:rxpermissions:$rxPermissions_version"//权限检查：https://github.com/tbruyelle/RxPermissions/
+    api "zlc.season:rxdownload3:$rxDownLoad_version"//下载:https://github.com/ssseasonnn/RxDownload/
+
     api 'org.greenrobot:eventbus:3.1.0'
     api 'io.paperdb:paperdb:2.6'//替代sp数据存储，实现在xe-core的Pref.kt
     api 'com.blankj:utilcodex:1.23.7'//通用工具类：https://github.com/Blankj/AndroidUtilCode/blob/master/utilcode/README-CN.md

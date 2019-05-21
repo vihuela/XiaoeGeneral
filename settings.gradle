@@ -1,1 +1,1 @@
-include ':app', ':xe-core', ':appbox-ui', ':xe-mediator', ':xe-base-ui', ':xe-tools', ':xe-net'
+include ':app', ':xe-core', ':appbox-ui', ':xe-mediator', ':xe-base-ui', ':xe-tools', ':xe-net', ':audio-ui'

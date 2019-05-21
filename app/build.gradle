@@ -23,7 +23,6 @@ android {
 }
 
 dependencies {
-
-
     addComponent 'appbox-ui'
+    addComponent 'audio-ui'
 }

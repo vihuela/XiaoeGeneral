@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app2_colorPrimary">#008577</color>
-    <color name="app2_colorPrimaryDark">#00574B</color>
-    <color name="app2_colorAccent">#D81B60</color>
+    <color name="abu_colorPrimary">#008577</color>
+    <color name="abu_colorPrimaryDark">#00574B</color>
+    <color name="abu_colorAccent">#D81B60</color>
 </resources>

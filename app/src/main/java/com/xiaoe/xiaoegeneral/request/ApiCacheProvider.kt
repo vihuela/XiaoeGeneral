@@ -1,7 +1,7 @@
 package com.xiaoe.xiaoegeneral.request
 
 import com.blankj.utilcode.util.NetworkUtils
-import com.xiaoe.common.retrofit.ApiUtils
+import com.xiaoe.xenet.retrofit.ApiUtils
 import com.xiaoe.xiaoegeneral.request.model.ImageRequest
 import io.reactivex.Observable
 import io.rx_cache2.DynamicKey

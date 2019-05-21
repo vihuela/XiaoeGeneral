@@ -4,7 +4,8 @@ import com.xiaoe.common.base.BasePresenter
 import com.xiaoe.common.ext.ext.defPolicy_Retry
 import com.xiaoe.common.ext.ext.parse
 import com.xiaoe.common.base.ui.IList
-import com.xiaoe.common.retrofit.transformer.XiaoeTransformer
+import com.xiaoe.common.ext.ext.defPolicy
+import com.xiaoe.xenet.retrofit.transformer.XiaoeTransformer
 import com.xiaoe.xiaoegeneral.model.ImageItem
 import com.xiaoe.xiaoegeneral.request.Api
 import com.xiaoe.xiaoegeneral.request.ApiCacheProvider
@@ -20,7 +21,7 @@ class MainActivityPresenter : BasePresenter<IList>() {
         val cacheApi = ApiCacheProvider.IMPL.getImageList(api, DynamicKey(page))
 
         cacheApi
-            .defPolicy_Retry(this,"getImageList")//第二个参数作用：比如连续发起10个请求，会取消前面9个
+            .defPolicy(this)
             .compose(XiaoeTransformer())//数据源生产者的通用过滤
             .map {
                 //cacheApi

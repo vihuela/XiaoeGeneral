@@ -14,7 +14,7 @@ android {
     }
 
 
-    resourcePrefix "app2_"//手动创建
+    resourcePrefix "abu_"//手动创建
 
 }
 

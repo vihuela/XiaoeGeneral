@@ -72,7 +72,7 @@ fun <T> Observable<T>.defRetry(count: Int = 10, period: Long = 2): Observable<T>
 }
 
 //【仅需要网络异常时重试才使用此策略】通常是列表，详情，网络异常时有限且间隔的重新发起请求
-//【请注意第二个参数】：若多个不同请求同时发起时，必须传入标识唯一值
+//【请注意第二个参数】：若多个不同请求同时发起时，必须传入标识唯一值，用于保留最后一个请求
 //因为重试请求一直在发起，所以需要绑定外部的BehaviorProcessor，避免新请求执行时，重试仍然在执行，本项目的BasePresenter提供一个map缓存
 //其它项目需要外部使用ob.bindToBehavior(bp)
 fun <T> Observable<T>.defPolicy_Retry(lifecycle: LifecycleProvider<*>, requestFlag: String = "mvpro"): Observable<T> {

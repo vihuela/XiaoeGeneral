@@ -1,0 +1,23 @@
+apply from: rootProject.file('app_envir.gradle')
+
+android {
+
+
+    defaultConfig {
+        //作为application时使用的包名。作为library时不需要
+        if (project.ext.runAsApp)
+            applicationId "com.xiaoe.audio_ui"
+
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+
+    resourcePrefix "aud_"//手动创建
+
+}
+
+dependencies {
+
+}

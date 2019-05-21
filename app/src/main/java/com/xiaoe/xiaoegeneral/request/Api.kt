@@ -1,7 +1,7 @@
 
 package com.xiaoe.xiaoegeneral.request
 
-import com.xiaoe.common.retrofit.ApiUtils
+import com.xiaoe.xenet.retrofit.ApiUtils
 import com.xiaoe.xiaoegeneral.request.model.ImageRequest
 import io.reactivex.Observable
 import retrofit2.http.GET

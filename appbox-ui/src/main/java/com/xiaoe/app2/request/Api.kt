@@ -2,7 +2,7 @@
 package com.xiaoe.app2.request
 
 import com.xiaoe.app2.request.model.NewsRequest
-import com.xiaoe.common.retrofit.ApiUtils
+import com.xiaoe.xenet.retrofit.ApiUtils
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path

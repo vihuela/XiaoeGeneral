@@ -5,8 +5,8 @@ import android.app.Application
 import com.blankj.utilcode.util.Utils
 import com.xiaoe.common.BuildConfig
 import com.xiaoe.common.resource.DataStatistics
-import com.xiaoe.common.retrofit.ApiPath
-import com.xiaoe.common.retrofit.ApiUtils
+import com.xiaoe.xenet.retrofit.ApiPath
+import com.xiaoe.xenet.retrofit.ApiUtils
 import io.paperdb.Paper
 
 interface IApp : INetState, ICurActivity {
@@ -29,7 +29,7 @@ interface IApp : INetState, ICurActivity {
         //current activity
         observeCurActivity(application) { currentActivity.invoke(it) }
         //observe network
-        observeNetwork(application, { ApiUtils.isRxCacheEvict = it }, filterPager)
+        observeNetwork(application, {  }, filterPager)
     }
 
 }

@@ -19,7 +19,7 @@ class MainActivityNewsBinder() : ItemViewBinder<NewsRequest.ListRes.StoriesBean,
     }
 
     override fun onCreateViewHolder(inflater: LayoutInflater, parent: ViewGroup): ImageHolder {
-        val imageHolder = ImageHolder(inflater.inflate(R.layout.app2_item_nomal_story, parent, false))
+        val imageHolder = ImageHolder(inflater.inflate(R.layout.abu_item_nomal_story, parent, false))
         return imageHolder
     }
 

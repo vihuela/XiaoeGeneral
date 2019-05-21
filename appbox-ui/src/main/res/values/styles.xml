@@ -1,11 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="app2_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="abu_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/app2_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/app2_colorPrimaryDark</item>
-        <item name="colorAccent">@color/app2_colorAccent</item>
+        <item name="colorPrimary">@color/abu_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/abu_colorPrimaryDark</item>
+        <item name="colorAccent">@color/abu_colorAccent</item>
         <item name="windowNoTitle">true</item>
     </style>
 
